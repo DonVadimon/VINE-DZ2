@@ -95,7 +95,7 @@ class ChatModel:
             name=self.name
         )
         self.id = record['id']
-        self.patchInstance(patch=record)
+        self.patchInstance(patch=record)  # type: ignore
 
         return self
 
@@ -287,7 +287,7 @@ class UserModel:
 
     def delete(self):
         patch = UserGateway.deleteUser(id=self.id)
-        self.patchInstance(patch=patch)
+        self.patchInstance(patch=patch)  # type: ignore
         return self
 
     def joinChat(self, chat: ChatModel):
